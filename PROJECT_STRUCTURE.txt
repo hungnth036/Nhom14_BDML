@@ -1,0 +1,121 @@
+================================================================================
+                    📁 CẤU TRÚC DỰ ÁN ĐÃ TẬI CẤU TRÚC
+================================================================================
+
+Nhom14_BDML/
+│
+├── 📋 FILE CẤU HÌNH & HƯỚNG DẪN
+│   ├── README.md                          ← START HERE! Hướng dẫn chính
+│   ├── requirements.txt                   ← Danh sách thư viện cần cài
+│   ├── .gitignore                         ← Git ignore configuration
+│   └── PROJECT_STRUCTURE.txt              ← File này
+│
+├── 📚 NOTEBOOKS (Thực hành Jupyter - Chạy theo thứ tự)
+│   ├── 01_EDA.ipynb                       ← Khám phá & phân tích dữ liệu
+│   ├── 02_Model_Training.ipynb            ← Huấn luyện 4 mô hình
+│   ├── 03_Model_Evaluation.ipynb          ← Đánh giá & so sánh mô hình
+│   ├── 04_Demo_Prediction.ipynb           ← Demo dự đoán từ mô hình
+│   └── BDML_Report_Guide.ipynb            ← 📄 BÁOÁO BDML (9 PHẦN)
+│
+├── 💻 SRC (Mã nguồn Python - Sử dụng được)
+│   ├── __init__.py                        ← Python package init
+│   ├── preprocessing.py                   ← Tiền xử lý dữ liệu
+│   ├── models.py                          ← Định nghĩa & huấn luyện mô hình
+│   ├── evaluation.py                      ← Đánh giá mô hình
+│   └── demo.py                            ← Demo dự đoán
+│
+├── 📊 DATA (Dữ liệu)
+│   ├── diabetes.csv                       ← Dataset gốc (768 mẫu - CẦN DÙNG)
+│   ├── diabetes_full.csv                  ← Full dataset
+│   └── diabetes_expanded.csv              ← Dataset mở rộng
+│
+├── 🤖 MODELS (Mô hình được lưu - Sản phẩm chính)
+│   ├── random_forest_best.pkl             ← ✅ Best model (76.62% accuracy)
+│   ├── scaler_best.pkl                    ← StandardScaler tương ứng
+│   ├── feature_names_best.pkl             ← Tên 8 đặc trưng
+│   ├── logistic_regression_optimized.pkl  ← Mô hình Logistic Regression
+│   ├── xgboost_optimized.pkl              ← Mô hình XGBoost
+│   ├── knn_optimized.pkl                  ← Mô hình KNN
+│   ├── random_forest_optimized.pkl        ← Mô hình Random Forest
+│   ├── random_forest_model.pkl            ← (cũ - dự phòng)
+│   ├── logistic_regression_model.pkl      ← (cũ - dự phòng)
+│   ├── xgboost_model.pkl                  ← (cũ - dự phòng)
+│   └── knn_model.pkl                      ← (cũ - dự phòng)
+│
+└── 📖 DOCUMENTATION (Tài liệu quan trọng - Đọc trước)
+    ├── EXECUTIVE_SUMMARY.md               ← Tóm tắt điều hành (cho quản lý)
+    ├── QUICK_START_MODEL.md               ← Hướng dẫn nhanh dùng mô hình
+    ├── RANDOM_FOREST_RESULTS.md           ← Kết quả chi tiết RF (76.62%)
+    └── PROJECT_COMPLETION_REPORT.md       ← Báo cáo hoàn thành đầy đủ
+
+================================================================================
+                        🎯 HƯỚNG DẪN SỬ DỤNG NHANH
+================================================================================
+
+1️⃣  CHUẨN BỊ MÔITRƯỜNG
+   pip install -r requirements.txt
+
+2️⃣  CHẠY NOTEBOOKS (trong VS Code hoặc Jupyter)
+   - Mở notebooks/01_EDA.ipynb → 02 → 03 → 04 (theo thứ tự)
+   - Hoặc xem báo cáo: notebooks/BDML_Report_Guide.ipynb
+
+3️⃣  DÙNG MỤ HÌNH TỪ PYTHON
+   from src.demo import predict_risk
+   result = predict_risk([6, 148, 72, 35, 0, 33.6, 0.627, 50])
+
+4️⃣  XEMẾT QUẢ
+   - EXECUTIVE_SUMMARY.md (quick overview)
+   - RANDOM_FOREST_RESULTS.md (chi tiết)
+
+================================================================================
+                        📊 KẾT QUẢ CHÍNH
+================================================================================
+
+✅ BEST MODEL: Random Forest
+   - Accuracy: 76.62%
+   - ROC-AUC: 0.8307
+   - F1-Score: 0.710
+   - Vượt quá mục tiêu 70%
+
+🎯 HYPERPARAMETER (Optimal)
+   - n_estimators: 200
+   - max_depth: 10
+   - min_samples_split: 5
+
+⭐ FEATURE IMPORTANCE
+   1. Glucose: 29.65%
+   2. BMI: 17.23%
+   3. Age: 12.37%
+
+================================================================================
+                        👥 THÀNH VIÊN NHÓM
+================================================================================
+
+Nguyễn Trọng Hưng (22133028)      - Data Engineer / Nhóm trưởng
+Nguyễn Dương Thế Cường            - ML Engineer
+
+================================================================================
+                        ✅ CHECKLIST HOÀN THÀNH
+================================================================================
+
+[✓] Dữ liệu được tải & tiền xử lý (768 mẫu, 8 đặc trưng)
+[✓] 4 mô hình được huấn luyện (LR, RF, XGB, KNN)
+[✓] Random Forest tối ưu (76.62% accuracy)
+[✓] Notebooks hoàn chỉnh (EDA, Training, Evaluation, Demo)
+[✓] Báo cáo BDML 9 phần (Abstract → References)
+[✓] Mô hình được serialize & lưu
+[✓] Tài liệu đầy đủ (README, Quick Start, Results)
+[✓] Cấu trúc sạch & gọn gàng
+[✓] GitHub repository được push
+
+================================================================================
+                        🔗 LIÊN KẾT QUAN TRỌNG
+================================================================================
+
+GitHub:  https://github.com/hungnth036/Nhom14_BDML
+Dataset: https://www.kaggle.com/uciml/pima-indians-diabetes-database
+scikit-learn: https://scikit-learn.org
+
+================================================================================
+Cập nhật: October 26, 2025 | Status: ✅ HOÀN THÀNH & TẬI CẤU TRÚC
+================================================================================
